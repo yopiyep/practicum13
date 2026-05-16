@@ -1,13 +1,8 @@
-sladkoeshkin = input().split()
+sladkoeshkin = set(input().split())
 n = int(input())
 
-all_friends = []
+all_friends = set()
 for _ in range(n):
-    all_friends.extend(input().split())
+    all_friends.update(input().split())
 
-count = 0
-for product in sladkoeshkin:
-    if product not in all_friends:
-        count += 1
-
-print(count)
+print(lenn(sladkoeshkin - all_friends))
